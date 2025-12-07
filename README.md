@@ -2,7 +2,7 @@
 
 A comprehensive drawing application built with C# Windows Forms that executes drawing commands to create shapes and designs.
 
-## 📋 Features
+##  Features
 
 - ✅ Draw circles and rectangles
 - ✅ Draw lines between points
@@ -13,7 +13,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 - ✅ Execute single or multiple commands
 - ✅ Keyboard shortcut (Shift+Enter)
 
-## 🎨 Design Patterns Used
+##  Design Patterns Used
 
 ### 1. Singleton Pattern
 **Class**: `MyCanvas`
@@ -42,7 +42,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 | **rect** | `rect width,height [filled]` | `rect 100,50` | Draw rectangle at cursor |
 | **pen** | `pen r,g,b` | `pen 255,0,0` | Set pen color (RGB 0-255) |
 
-## 💻 Example Program
+##  Example Program
 ```
 moveto 100,150
 pen 0,0,255
@@ -58,7 +58,7 @@ moveto 200,250
 rect 200,100
 ```
 
-## 🏗️ Project Structure
+##  Project Structure
 ```
 RudichChhantel_assignment/
 ├── Form1.cs                    - Main form (UI controller)
@@ -74,7 +74,7 @@ RudichChhantel_assignment/
     └── CommandTests.cs        - Unit tests
 ```
 
-## 🧪 Unit Tests
+##  Unit Tests
 
 Comprehensive unit tests covering:
 - ✅ MoveTo command position tracking
@@ -88,7 +88,7 @@ Comprehensive unit tests covering:
 
 **Total: 25+ unit tests**
 
-## 📚 Documentation
+##  Documentation
 
 All code includes comprehensive XML documentation comments.
 
@@ -140,6 +140,45 @@ This project is created for educational purposes as part of a programming assign
 - BOOSE library for command pattern framework
 - Visual Studio for development environment
 - MSTest for unit testing framework
+
+##  Unit Tests Documentation
+
+This project includes **27 comprehensive unit tests** covering all functionality.
+
+### Test Coverage
+
+| Category | Tests | Coverage |
+|----------|-------|----------|
+| **MoveTo Commands** | 4 | Position tracking and validation |
+| **DrawTo Commands** | 3 | Line drawing and position updates |
+| **Circle Commands** | 3 | Circle drawing (filled & outline) |
+| **Rectangle Commands** | 3 | Rectangle drawing (filled & outline) |
+| **Pen Commands** | 3 | Color setting and validation |
+| **Multiline Programs** | 2 | Full program execution |
+| **Compile Methods** | 5 | Parameter parsing and validation |
+| **Factory Pattern** | 3 | Command creation |
+| **Singleton Pattern** | 1 | Instance management |
+
+### View Test Documentation
+
+- **[View Test Documentation](TestDocumentation.xml)** - Click to see beautifully formatted test documentation
+- **[View API Documentation](Documentation.xml)** - Click to see full API documentation
+
+### Running Tests
+
+1. Open solution in Visual Studio
+2. Go to **Test** → **Test Explorer**
+3. Click **Run All Tests**
+4. All 27 tests should pass ✅
+
+### Test Results
+```
+✅ All 27 tests passing
+✅ 100% test success rate
+✅ Covers all commands
+✅ Validates all design patterns
+```
+```
 
 ---
 
