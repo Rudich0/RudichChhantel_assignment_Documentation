@@ -2,6 +2,11 @@
 
 A comprehensive drawing application built with C# Windows Forms that executes drawing commands to create shapes and designs.
 
+### View Documentation
+
+- **[View Test Documentation](TestDocumentation.xml)** - Click to see beautifully formatted test documentation
+- **[View API Documentation](Documentation.xml)** - Click to see full API documentation
+
 ##  Features
 
 - ✅ Draw circles and rectangles
@@ -32,7 +37,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 - Uses BOOSE library base classes
 - Supports Set(), Compile(), and Execute() methods
 
-## 📝 Supported Commands
+##  Supported Commands
 
 | Command | Syntax | Example | Description |
 |---------|--------|---------|-------------|
@@ -56,22 +61,6 @@ circle 250
 pen 255,0,0
 moveto 200,250
 rect 200,100
-```
-
-##  Project Structure
-```
-RudichChhantel_assignment/
-├── Form1.cs                    - Main form (UI controller)
-├── CommandSlicing.cs           - Factory pattern (creates commands)
-├── MyCanvas.cs                 - Singleton pattern (canvas manager)
-├── CustomCanvas.cs             - Canvas implementation (drawing logic)
-├── ShapeCircle.cs             - Circle command
-├── ShapeRectangle.cs          - Rectangle command
-├── MoveTo.cs                  - Move cursor command
-├── DrawTo.cs                  - Draw line command
-├── MyPen.cs                   - Set color command
-└── Tests/
-    └── CommandTests.cs        - Unit tests
 ```
 
 ##  Unit Tests
@@ -158,11 +147,6 @@ This project includes **27 comprehensive unit tests** covering all functionality
 | **Compile Methods** | 5 | Parameter parsing and validation |
 | **Factory Pattern** | 3 | Command creation |
 | **Singleton Pattern** | 1 | Instance management |
-
-### View Test Documentation
-
-- **[View Test Documentation](TestDocumentation.xml)** - Click to see beautifully formatted test documentation
-- **[View API Documentation](Documentation.xml)** - Click to see full API documentation
 
 ### Running Tests
 
