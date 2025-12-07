@@ -1,14 +1,11 @@
 # Drawing Application - C# Windows Forms
-
 A comprehensive drawing application built with C# Windows Forms that executes drawing commands to create shapes and designs.
 
 ### View Documentation
+- **[View Test Documentation](TestDocumentation.html)** - Click to see test documentation
+- **[View API Documentation](Documentation.html)** - Click to see API documentation
 
-- **[View Test Documentation](TestDocumentation.xml)** - Click to see  test documentation
-- **[View API Documentation](Documentation.xml)** - Click to see API documentation
-
-##  Features
-
+## Features
 - ✅ Draw circles and rectangles
 - ✅ Draw lines between points
 - ✅ Move cursor without drawing
@@ -18,7 +15,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 - ✅ Execute single or multiple commands
 - ✅ Keyboard shortcut (Shift+Enter)
 
-##  Design Patterns Used
+## Design Patterns Used
 
 ### 1. Singleton Pattern
 **Class**: `MyCanvas`
@@ -37,7 +34,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 - Uses BOOSE library base classes
 - Supports Set(), Compile(), and Execute() methods
 
-##  Supported Commands
+## Supported Commands
 
 | Command | Syntax | Example | Description |
 |---------|--------|---------|-------------|
@@ -47,7 +44,7 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 | **rect** | `rect width,height [filled]` | `rect 100,50` | Draw rectangle at cursor |
 | **pen** | `pen r,g,b` | `pen 255,0,0` | Set pen color (RGB 0-255) |
 
-##  Example Program
+## Example Program
 ```
 moveto 100,150
 pen 0,0,255
@@ -63,8 +60,7 @@ moveto 200,250
 rect 200,100
 ```
 
-##  Unit Tests
-
+## Unit Tests
 Comprehensive unit tests covering:
 - ✅ MoveTo command position tracking
 - ✅ DrawTo line drawing and position updates
@@ -75,14 +71,12 @@ Comprehensive unit tests covering:
 - ✅ Factory pattern command creation
 - ✅ Singleton pattern verification
 
-**Total: 25+ unit tests**
+**Total: 27 unit tests**
 
-##  Unit Tests Documentation
-
+## Unit Tests Documentation
 This project includes **27 comprehensive unit tests** covering all functionality.
 
 ### Test Coverage
-
 | Category | Tests | Coverage |
 |----------|-------|----------|
 | **MoveTo Commands** | 4 | Position tracking and validation |
@@ -103,21 +97,22 @@ This project includes **27 comprehensive unit tests** covering all functionality
 ✅ Validates all design patterns
 ```
 
-##  Documentation
+## Documentation
+All code includes comprehensive XML documentation comments that are transformed into styled HTML pages using XSLT.
 
-All code includes comprehensive XML documentation comments.
-
-##  Author
-
-**Rudich Chhantel**
-
-##  License
-
-This project is created for educational purposes as part of a programming assignment.
-
+### Generating Documentation
+To regenerate the HTML documentation from XML:
+```bash
+xsltproc -o Documentation.html documentation.xsl Documentation.xml
+xsltproc -o TestDocumentation.html test-documentation.xsl TestDocumentation.xml
 ```
 
----
+## Author
+**Rudich Chhantel**
 
+## License
+This project is created for educational purposes as part of a programming assignment.
+
+---
 **Version**: 1.0  
 **Last Updated**: December 2024
