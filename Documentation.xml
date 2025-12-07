@@ -1,0 +1,347 @@
+<doc>
+<assembly>
+<name>RudichChhantel_assignment</name>
+</assembly>
+<members>
+<member name="T:RudichChhantel_assignment.CommandSlicing">
+<summary> Factory class that creates command objects based on command name. Implements the Factory Design Pattern. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.CommandSlicing.Create(System.String,System.String[],BOOSE.ICanvas)">
+<summary> Creates a CanvasCommand object based on the command name. </summary>
+<param name="cmdName">The name of the command (e.g., "circle", "moveto")</param>
+<param name="parameters">Array of parameter strings for the command</param>
+<param name="canvas">The canvas object on which commands will be executed</param>
+<returns>A CanvasCommand object of the appropriate type</returns>
+<exception cref="T:System.Exception">Thrown when command name is not recognized</exception>
+</member>
+<member name="T:RudichChhantel_assignment.CustomCanvas">
+<summary> Custom implementation of the Canvas class that handles actual drawing operations. Extends BOOSE.Canvas and implements drawing methods using GDI+. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.CustomCanvas.bitmap">
+<summary> The bitmap surface on which all drawings are rendered </summary>
+</member>
+<member name="F:RudichChhantel_assignment.CustomCanvas.graphics">
+<summary> Graphics object used to draw on the bitmap </summary>
+</member>
+<member name="F:RudichChhantel_assignment.CustomCanvas.pen">
+<summary> Current pen used for drawing operations </summary>
+</member>
+<member name="F:RudichChhantel_assignment.CustomCanvas.currentX">
+<summary> Current X coordinate of the drawing cursor </summary>
+</member>
+<member name="F:RudichChhantel_assignment.CustomCanvas.currentY">
+<summary> Current Y coordinate of the drawing cursor </summary>
+</member>
+<member name="P:RudichChhantel_assignment.CustomCanvas.Xpos">
+<summary> Initializes a new instance of the CustomCanvas class. Creates a bitmap of specified dimensions and sets up drawing tools. </summary>
+<param name="width">Width of the canvas in pixels</param>
+<param name="height">Height of the canvas in pixels</param>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.Circle(System.Int32,System.Boolean)">
+<summary> Draws a circle at the current cursor position. </summary>
+<param name="radius">Radius of the circle in pixels</param>
+<param name="filled">True to draw a filled circle, false for outline only</param>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.Rect(System.Int32,System.Int32,System.Boolean)">
+<summary> Draws a rectangle at the current cursor position. </summary>
+<param name="width">Width of the rectangle in pixels</param>
+<param name="height">Height of the rectangle in pixels</param>
+<param name="filled">True to draw a filled rectangle, false for outline only</param>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.getBitmap">
+<summary> Gets the bitmap object containing all drawings. </summary>
+<returns>The bitmap object as a generic object type</returns>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.MoveTo(System.Int32,System.Int32)">
+<summary> Moves the drawing cursor to the specified coordinates without drawing. </summary>
+<param name="x">X coordinate in pixels</param>
+<param name="y">Y coordinate in pixels</param>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.Clear">
+<summary> Clears the entire canvas with white color. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.Reset">
+<summary> Resets the canvas to initial state. Sets cursor to (0,0) and pen to default black color. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.SetColour(System.Int32,System.Int32,System.Int32)">
+<summary> Sets the pen color using RGB values. </summary>
+<param name="red">Red component (0-255)</param>
+<param name="green">Green component (0-255)</param>
+<param name="blue">Blue component (0-255)</param>
+</member>
+<member name="M:RudichChhantel_assignment.CustomCanvas.DrawTo(System.Int32,System.Int32)">
+<summary> Draws a line from current cursor position to specified coordinates. Updates cursor position to the end point. </summary>
+<param name="x">Target X coordinate</param>
+<param name="y">Target Y coordinate</param>
+</member>
+<member name="T:RudichChhantel_assignment.DrawTo">
+<summary> Command class that draws a line from current position to specified position. Also updates the cursor position to the end point. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.DrawTo.x">
+<summary> Target X coordinate </summary>
+</member>
+<member name="F:RudichChhantel_assignment.DrawTo.y">
+<summary> Target Y coordinate </summary>
+</member>
+<member name="M:RudichChhantel_assignment.DrawTo.#ctor(BOOSE.ICanvas,System.String[])">
+<summary> Initializes a new instance of the DrawTo class. </summary>
+<param name="canvas">The canvas on which to draw</param>
+<param name="args">Array containing x and y coordinates</param>
+</member>
+<member name="M:RudichChhantel_assignment.DrawTo.Set(BOOSE.StoredProgram,System.String)">
+<summary> Stores the program reference and parameter string for later compilation. </summary>
+<param name="program">The StoredProgram this command belongs to</param>
+<param name="parameters">Parameter string (format: "x,y")</param>
+</member>
+<member name="M:RudichChhantel_assignment.DrawTo.Compile">
+<summary> Parses and validates the X and Y coordinates. Ensures coordinates are valid numbers and positive values. </summary>
+<exception cref="T:System.ArgumentException">Thrown when parameters are invalid</exception>
+</member>
+<member name="M:RudichChhantel_assignment.DrawTo.CheckParameters(System.String[])">
+<summary> Validates that exactly 2 parameters (x and y) are provided. </summary>
+<param name="parameter">Array of parameter strings</param>
+<exception cref="T:System.ArgumentException">Thrown when parameter count is not 2</exception>
+</member>
+<member name="M:RudichChhantel_assignment.DrawTo.Execute">
+<summary> Executes the draw line operation and updates cursor position. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.MoveTo">
+<summary> Command class that moves the drawing cursor to a specified position without drawing. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MoveTo.x">
+<summary> Target X coordinate </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MoveTo.y">
+<summary> Target Y coordinate </summary>
+</member>
+<member name="M:RudichChhantel_assignment.MoveTo.#ctor(BOOSE.ICanvas,System.String[])">
+<summary> Initializes a new instance of the MoveTo class. </summary>
+<param name="canvas">The canvas on which to operate</param>
+<param name="args">Array containing x and y coordinates</param>
+</member>
+<member name="M:RudichChhantel_assignment.MoveTo.Set(BOOSE.StoredProgram,System.String)">
+<summary> Stores the program reference and parameter string for later compilation. </summary>
+<param name="program">The StoredProgram this command belongs to</param>
+<param name="parameters">Parameter string (format: "x,y")</param>
+</member>
+<member name="M:RudichChhantel_assignment.MoveTo.Compile">
+<summary> Parses and validates the X and Y coordinates. Ensures coordinates are valid numbers and positive values. </summary>
+<exception cref="T:System.ArgumentException">Thrown when parameters are invalid</exception>
+</member>
+<member name="M:RudichChhantel_assignment.MoveTo.CheckParameters(System.String[])">
+<summary> Validates that exactly 2 parameters (x and y) are provided. </summary>
+<param name="parameter">Array of parameter strings</param>
+<exception cref="T:System.ArgumentException">Thrown when parameter count is not 2</exception>
+</member>
+<member name="M:RudichChhantel_assignment.MoveTo.Execute">
+<summary> Executes the move cursor operation. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.MyCanvas">
+<summary> Singleton class that manages a single canvas instance throughout the application. Implements the Singleton Design Pattern to ensure only one canvas exists. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MyCanvas.instance">
+<summary> The single instance of MyCanvas (null until first access) </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MyCanvas.canvas">
+<summary> The CustomCanvas object that handles actual drawing </summary>
+</member>
+<member name="M:RudichChhantel_assignment.MyCanvas.#ctor">
+<summary> Private constructor prevents external instantiation. Canvas is created later via SetCanvas method. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.MyCanvas.GetInstance">
+<summary> Gets the singleton instance of MyCanvas. Creates the instance on first call (lazy initialization). </summary>
+<returns>The single MyCanvas instance</returns>
+</member>
+<member name="M:RudichChhantel_assignment.MyCanvas.GetCanvas">
+<summary> Gets the Canvas object for drawing operations. </summary>
+<returns>The CustomCanvas instance</returns>
+</member>
+<member name="M:RudichChhantel_assignment.MyCanvas.SetCanvas(System.Int32,System.Int32)">
+<summary> Creates and initializes the canvas with specified dimensions. </summary>
+<param name="width">Width of the canvas in pixels</param>
+<param name="height">Height of the canvas in pixels</param>
+</member>
+<member name="T:RudichChhantel_assignment.MyPen">
+<summary> Command class that sets the pen color for subsequent drawing operations. Uses RGB color values (0-255). </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MyPen.red">
+<summary> Red component of the color (0-255) </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MyPen.green">
+<summary> Green component of the color (0-255) </summary>
+</member>
+<member name="F:RudichChhantel_assignment.MyPen.blue">
+<summary> Blue component of the color (0-255) </summary>
+</member>
+<member name="M:RudichChhantel_assignment.MyPen.#ctor(BOOSE.ICanvas,System.String[])">
+<summary> Initializes a new instance of the MyPen class. </summary>
+<param name="canvas">The canvas whose pen color will be changed</param>
+<param name="args">Array containing red, green, and blue values (0-255)</param>
+</member>
+<member name="M:RudichChhantel_assignment.MyPen.Set(BOOSE.StoredProgram,System.String)">
+<summary> Stores the program reference and parameter string for later compilation. </summary>
+<param name="program">The StoredProgram this command belongs to</param>
+<param name="parameters">Parameter string (format: "r,g,b")</param>
+</member>
+<member name="M:RudichChhantel_assignment.MyPen.Compile">
+<summary> Parses and validates the RGB color values. Ensures all values are numbers in the range 0-255. </summary>
+<exception cref="T:System.ArgumentException">Thrown when parameters are invalid or out of range</exception>
+</member>
+<member name="M:RudichChhantel_assignment.MyPen.CheckParameters(System.String[])">
+<summary> Validates that exactly 3 parameters (red, green, blue) are provided. </summary>
+<param name="parameter">Array of parameter strings</param>
+<exception cref="T:System.ArgumentException">Thrown when parameter count is not 3</exception>
+</member>
+<member name="M:RudichChhantel_assignment.MyPen.Execute">
+<summary> Executes the pen color change operation. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.Program.Main">
+<summary> The main entry point for the application. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.Rudich_Chhantel">
+<summary> Main form for the Drawing Application. Handles user input, command execution, and display of drawings. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.Rudich_Chhantel.canvas">
+<summary> The canvas on which all drawings are rendered </summary>
+</member>
+<member name="F:RudichChhantel_assignment.Rudich_Chhantel.slicing">
+<summary> Factory for creating command objects </summary>
+</member>
+<member name="F:RudichChhantel_assignment.Rudich_Chhantel.program">
+<summary> StoredProgram to manage command execution </summary>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.#ctor">
+<summary> Initializes a new instance of the Rudich_Chhantel form. Sets up the canvas, command factory, and stored program. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.pictureBox1_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+<summary> Handles the Paint event for the output picture box. Displays the canvas bitmap on the screen. </summary>
+<param name="sender">The source of the event (picture box control)</param>
+<param name="e">Paint event arguments containing graphics context</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.Run_Click(System.Object,System.EventArgs)">
+<summary> Executes commands when the Run button is clicked. Handles both single command execution (from singleCommandBox) and multiple command execution (from commandBox). </summary>
+<param name="sender">The source of the event (Run button)</param>
+<param name="e">Event arguments</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.ExecuteCommand(System.String)">
+<summary> Parses and executes a single command string. Splits the command into name and parameters, creates the command object using the factory, and executes it on the canvas. </summary>
+<param name="commandLine"> The command string to execute. Format: "commandName param1,param2,..." Example: "circle 50" or "moveto 100,150" </param>
+<exception cref="T:System.Exception"> Thrown when command name is not recognized or parameters are invalid </exception>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.Enter_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+<summary> Handles the KeyDown event for executing commands with Shift+Enter. Provides keyboard shortcut alternative to clicking the Run button. </summary>
+<param name="sender">The source of the event (text box control)</param>
+<param name="e">Key event arguments containing information about the pressed key</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.aboutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+<summary> Displays the About dialog with application information. Shows version, author, supported commands, and design patterns used. </summary>
+<param name="sender">The source of the event (About menu item)</param>
+<param name="e">Event arguments</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.saveImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+<summary> Saves the current drawing as a PNG image file. Opens a save file dialog and exports the canvas bitmap. </summary>
+<param name="sender">The source of the event (Save Image menu item)</param>
+<param name="e">Event arguments</param>
+<exception cref="T:System.Exception"> Thrown when file save operation fails </exception>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.exitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+<summary> Closes the application. </summary>
+<param name="e">Event arguments</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.loadImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+<summary> Loads an image file from disk and displays it on the canvas. Opens a file dialog to select PNG, JPG, or BMP image files. The loaded image is drawn at the top-left corner of the canvas. </summary>
+<param name="sender">The source of the event (Load Image menu item)</param>
+<param name="e">Event arguments</param>
+<exception cref="T:System.Exception"> Thrown when image file cannot be loaded or is in an unsupported format </exception>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.newToolStripMenuItem_Click(System.Object,System.EventArgs)">
+<summary> Creates a new drawing by clearing the canvas and all text boxes. Resets the application to initial state, ready for a new drawing session. </summary>
+<param name="sender">The source of the event (New menu item)</param>
+<param name="e">Event arguments</param>
+</member>
+<member name="F:RudichChhantel_assignment.Rudich_Chhantel.components">
+<summary> Required designer variable. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.Dispose(System.Boolean)">
+<summary> Clean up any resources being used. </summary>
+<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+</member>
+<member name="M:RudichChhantel_assignment.Rudich_Chhantel.InitializeComponent">
+<summary> Required method for Designer support - do not modify the contents of this method with the code editor. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.ShapeCircle">
+<summary> Command class that draws a circle on the canvas. Implements the Command Pattern via CanvasCommand base class. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.ShapeCircle.fillcircle">
+<summary> Indicates whether the circle should be filled or outline only </summary>
+</member>
+<member name="F:RudichChhantel_assignment.ShapeCircle.radius">
+<summary> Radius of the circle in pixels </summary>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeCircle.#ctor(BOOSE.ICanvas,System.String[])">
+<summary> Initializes a new instance of the ShapeCircle class. </summary>
+<param name="canvas">The canvas on which to draw</param>
+<param name="args">Array containing radius and optional filled parameter</param>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeCircle.Set(BOOSE.StoredProgram,System.String)">
+<summary> Stores the program reference and parameter string for later compilation. Part of the two-phase execution model (Set → Compile → Execute). </summary>
+<param name="program">The StoredProgram this command belongs to</param>
+<param name="parameters">Parameter string to be parsed during compilation</param>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeCircle.Compile">
+<summary> Parses and validates the parameters stored during Set(). Performs error checking and throws descriptive exceptions if parameters are invalid. </summary>
+<exception cref="T:System.ArgumentException">Thrown when parameters are invalid</exception>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeCircle.CheckParameters(System.String[])">
+<summary> Validates that the correct number of parameters have been provided. </summary>
+<param name="parameter">Array of parameter strings</param>
+<exception cref="T:System.ArgumentException">Thrown when parameter count is incorrect</exception>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeCircle.Execute">
+<summary> Executes the circle drawing command on the canvas. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.ShapeRectangle">
+<summary> Command class that draws a rectangle on the canvas. </summary>
+</member>
+<member name="F:RudichChhantel_assignment.ShapeRectangle.width">
+<summary> Width of the rectangle in pixels </summary>
+</member>
+<member name="F:RudichChhantel_assignment.ShapeRectangle.height">
+<summary> Height of the rectangle in pixels </summary>
+</member>
+<member name="F:RudichChhantel_assignment.ShapeRectangle.filled">
+<summary> Indicates whether the rectangle should be filled or outline only </summary>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeRectangle.#ctor(BOOSE.ICanvas,System.String[])">
+<summary> Initializes a new instance of the ShapeRectangle class. </summary>
+<param name="canvas">The canvas on which to draw</param>
+<param name="args">Array containing width, height, and optional filled parameter</param>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeRectangle.Set(BOOSE.StoredProgram,System.String)">
+<summary> Stores the program reference and parameter string for later compilation. </summary>
+<param name="program">The StoredProgram this command belongs to</param>
+<param name="parameters">Parameter string (format: "width,height" or "width,height,filled")</param>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeRectangle.Compile">
+<summary> Parses and validates the rectangle dimensions and filled flag. Ensures dimensions are positive values. </summary>
+<exception cref="T:System.ArgumentException">Thrown when parameters are invalid</exception>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeRectangle.CheckParameters(System.String[])">
+<summary> Validates that at least 2 parameters (width and height) are provided. </summary>
+<param name="parameter">Array of parameter strings</param>
+<exception cref="T:System.ArgumentException">Thrown when parameter count is less than 2</exception>
+</member>
+<member name="M:RudichChhantel_assignment.ShapeRectangle.Execute">
+<summary> Executes the rectangle drawing command on the canvas. </summary>
+</member>
+<member name="T:RudichChhantel_assignment.ApplicationConfiguration">
+<summary> Bootstrap the application configuration. </summary>
+</member>
+<member name="M:RudichChhantel_assignment.ApplicationConfiguration.Initialize">
+<summary>
+Bootstrap the application as follows:
+<code> global::System.Windows.Forms.Application.EnableVisualStyles(); global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false); global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware); </code>
+</summary>
+</member>
+</members>
+</doc>
