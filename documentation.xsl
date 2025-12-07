@@ -10,12 +10,17 @@
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { 
             font-family: 'Courier New', monospace;
-            background: white;
+            background: #f5f5f5;
             padding: 40px;
             line-height: 1.8;
             color: black;
+          }
+          .container {
             max-width: 900px;
             margin: 0 auto;
+            background: white;
+            border: 1px solid black;
+            padding: 40px;
           }
           .header {
             border-bottom: 2px solid black;
