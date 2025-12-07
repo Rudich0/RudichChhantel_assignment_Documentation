@@ -121,7 +121,7 @@
     <xsl:if test="count($tests) &gt; 0">
       <div class="test-section">
         <div class="section-header">
-          <xsl:value-of select="$category"/> (<xsl:value-of select="count($tests)"/>)
+          <xsl:value-of select="$category"/>
         </div>
         <xsl:for-each select="$tests">
           <div class="test-item">
