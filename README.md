@@ -4,15 +4,15 @@ A comprehensive drawing application built with C# Windows Forms that executes dr
 
 ### View Documentation
 
-- **[View Test Documentation](TestDocumentation.xml)** - Click to see beautifully formatted test documentation
-- **[View API Documentation](Documentation.xml)** - Click to see full API documentation
+- **[View Test Documentation](TestDocumentation.xml)** - Click to see  test documentation
+- **[View API Documentation](Documentation.xml)** - Click to see API documentation
 
 ##  Features
 
 - ✅ Draw circles and rectangles
 - ✅ Draw lines between points
 - ✅ Move cursor without drawing
-- ✅ Change pen colors (RGB)
+- ✅ Change pen colors
 - ✅ Save drawings as PNG images
 - ✅ Load images onto canvas
 - ✅ Execute single or multiple commands
@@ -77,59 +77,6 @@ Comprehensive unit tests covering:
 
 **Total: 25+ unit tests**
 
-##  Documentation
-
-All code includes comprehensive XML documentation comments.
-
-### Viewing Documentation:
-- **In Visual Studio**: Hover over any class/method to see documentation
-- **IntelliSense**: Get automatic documentation hints while coding
-- **XML File**: Generated at `bin/Debug/RudichChhantel_assignment.xml`
-
-##  Requirements
-
-- .NET 8.0 or higher
-- Windows Forms Application
-- BOOSE.dll (included)
-- Visual Studio 2022 (recommended)
-
-##  Installation & Usage
-
-1. Download or clone the repository
-2. Open `RudichChhantel_assignment.sln` in Visual Studio
-3. Build the solution (Ctrl+Shift+B)
-4. Run the application (F5)
-
-### Using the Application:
-
-**Single Command:**
-- Type command in lower-left textbox
-- Click "Run" or press Shift+Enter
-
-**Multiple Commands:**
-- Type commands in upper-left textbox (one per line)
-- Click "Run" or press Shift+Enter
-
-**Menu Options:**
-- File → New: Clear canvas and start fresh
-- File → Load Image: Import an image
-- File → Save Image: Export drawing as PNG
-- Help → About: View application information
-
-##  Author
-
-**Rudich Chhantel**
-
-##  License
-
-This project is created for educational purposes as part of a programming assignment.
-
-##  Acknowledgments
-
-- BOOSE library for command pattern framework
-- Visual Studio for development environment
-- MSTest for unit testing framework
-
 ##  Unit Tests Documentation
 
 This project includes **27 comprehensive unit tests** covering all functionality.
@@ -148,13 +95,6 @@ This project includes **27 comprehensive unit tests** covering all functionality
 | **Factory Pattern** | 3 | Command creation |
 | **Singleton Pattern** | 1 | Instance management |
 
-### Running Tests
-
-1. Open solution in Visual Studio
-2. Go to **Test** → **Test Explorer**
-3. Click **Run All Tests**
-4. All 27 tests should pass ✅
-
 ### Test Results
 ```
 ✅ All 27 tests passing
@@ -162,6 +102,19 @@ This project includes **27 comprehensive unit tests** covering all functionality
 ✅ Covers all commands
 ✅ Validates all design patterns
 ```
+
+##  Documentation
+
+All code includes comprehensive XML documentation comments.
+
+##  Author
+
+**Rudich Chhantel**
+
+##  License
+
+This project is created for educational purposes as part of a programming assignment.
+
 ```
 
 ---
