@@ -5,125 +5,139 @@
   <xsl:template match="/">
     <html>
       <head>
-        <title>RudichChhantel Assignment - API Documentation</title>
+        <title>API Documentation - RudichChhantel Assignment</title>
         <style>
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
             padding: 20px;
             line-height: 1.6;
+            color: #333;
           }
           .container {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             overflow: hidden;
           }
           .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c3e50;
             color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 30px 40px;
+            border-bottom: 4px solid #34495e;
           }
           .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 5px;
+            font-weight: 600;
           }
           .header p {
-            font-size: 1.2em;
+            font-size: 1em;
             opacity: 0.9;
           }
           .content {
             padding: 40px;
           }
-          .member {
-            background: #f8f9fa;
-            margin: 20px 0;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-          }
-          .member:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-          }
-          .member-type {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-          }
-          .member-name {
-            color: #2c3e50;
-            font-family: 'Courier New', monospace;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin: 15px 0;
-            word-wrap: break-word;
-          }
-          .summary {
-            color: #555;
-            margin: 15px 0;
-            padding: 15px;
-            background: white;
-            border-radius: 5px;
-          }
-          .section {
-            margin: 15px 0;
-            padding: 15px;
-            background: white;
-            border-radius: 5px;
-            border-left: 3px solid #3498db;
-          }
-          .section-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-          }
-          .param, .exception {
-            margin: 8px 0;
-            padding-left: 20px;
-          }
-          .param-name, .exception-type {
-            font-weight: bold;
-            color: #e74c3c;
-            font-family: 'Courier New', monospace;
-          }
-          .search-box {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 2px solid #667eea;
-            border-radius: 10px;
-            font-size: 1em;
-          }
           .stats {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
             padding: 20px;
             background: #f8f9fa;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
           }
           .stat-item {
             text-align: center;
+            padding: 15px;
           }
           .stat-number {
             font-size: 2em;
             font-weight: bold;
-            color: #667eea;
+            color: #2c3e50;
           }
           .stat-label {
             color: #666;
             font-size: 0.9em;
+            margin-top: 5px;
+          }
+          .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+          }
+          .search-box:focus {
+            outline: none;
+            border-color: #2c3e50;
+          }
+          .member {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            border-left: 4px solid #2c3e50;
+            transition: box-shadow 0.3s ease;
+          }
+          .member:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          }
+          .member-type {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+          }
+          .member-name {
+            color: #2c3e50;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin: 12px 0;
+            word-wrap: break-word;
+          }
+          .summary {
+            color: #555;
+            margin: 12px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #dee2e6;
+          }
+          .section {
+            margin: 12px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #6c757d;
+          }
+          .section-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+          }
+          .param, .exception {
+            margin: 6px 0;
+            padding-left: 15px;
+            font-size: 0.9em;
+          }
+          .param-name, .exception-type {
+            font-weight: 600;
+            color: #495057;
+            font-family: 'Courier New', monospace;
           }
         </style>
         <script>
@@ -141,7 +155,7 @@
       <body>
         <div class="container">
           <div class="header">
-            <h1>📚 API Documentation</h1>
+            <h1>API Documentation</h1>
             <p>RudichChhantel Assignment - Drawing Application</p>
           </div>
           
@@ -165,7 +179,7 @@
               </div>
             </div>
             
-            <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search documentation..." onkeyup="searchMembers()"/>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search documentation..."/>
             
             <xsl:apply-templates select="doc/members/member"/>
           </div>
@@ -203,7 +217,7 @@
       
       <xsl:if test="param">
         <div class="section">
-          <div class="section-title">📋 Parameters</div>
+          <div class="section-title">Parameters</div>
           <xsl:for-each select="param">
             <div class="param">
               <span class="param-name"><xsl:value-of select="@name"/></span>
@@ -216,14 +230,14 @@
       
       <xsl:if test="returns">
         <div class="section">
-          <div class="section-title">↩️ Returns</div>
+          <div class="section-title">Returns</div>
           <xsl:value-of select="returns"/>
         </div>
       </xsl:if>
       
       <xsl:if test="exception">
-        <div class="section" style="border-left-color: #e74c3c;">
-          <div class="section-title">⚠️ Exceptions</div>
+        <div class="section">
+          <div class="section-title">Exceptions</div>
           <xsl:for-each select="exception">
             <div class="exception">
               <span class="exception-type"><xsl:value-of select="@cref"/></span>
@@ -236,14 +250,14 @@
       
       <xsl:if test="remarks">
         <div class="section">
-          <div class="section-title">💡 Remarks</div>
+          <div class="section-title">Remarks</div>
           <xsl:value-of select="remarks"/>
         </div>
       </xsl:if>
       
       <xsl:if test="example">
         <div class="section">
-          <div class="section-title">📝 Example</div>
+          <div class="section-title">Example</div>
           <xsl:value-of select="example"/>
         </div>
       </xsl:if>
