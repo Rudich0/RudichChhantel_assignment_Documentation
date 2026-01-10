@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0084)file:///C:/Users/rudich/AppData/Roaming/DocPreview/Temp/vs.6412/doc.-1259070136.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="./boolean_files/ContentsMerged.css">
+    <title>Class GenericClass</title>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Class BooleanCommand</div>
+    <div id="Contents">
+
+    
+ Represents a boolean variable declaration and evaluation in the extended BOOSE language.
+ Supports direct literals (true/false), variable references, and logical expressions.
+ Provides compatibility with BOOSE's integer-based Value system (1 = true, 0 = false).
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public class BooleanCommand : Evaluation</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Property BoolValue</div>
+    <div id="Contents">
+
+    
+ Gets or sets the actual boolean value of this variable.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public bool BoolValue</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Property int</div>
+    <div id="Contents">
+
+    
+ BOOSE-compatible integer value (1 for true, 0 for false).
+ Used for compatibility with expressions expecting numeric values.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public new int Value</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Constructor BooleanCommand</div>
+    <div id="Contents">
+
+    
+ Initializes a new instance of the <a href="file:///C:/Users/rudich/AppData/Roaming/DocPreview/Temp/vs.6412/doc.-1259070136.html">BooleanCommand</a> class.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public BooleanCommand()</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Method Set</div>
+    <div id="Contents">
+
+    
+ Sets the variable name and optional initial expression from the declaration string.
+ Supports formats like: "flag = true" or just "flag".
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public override void Set(StoredProgram program, string parameters)</pre></td></tr></tbody></table>
+    
+    <div class="CommentHeader">Parameters</div>
+<div class="CommentParameterName">program</div><div class="ParameterCommentContainer">
+The stored program context.
+</div>
+<div class="CommentParameterName">parameters</div><div class="ParameterCommentContainer">
+The declaration string (e.g. "flag = true" or "flag").
+</div>
+
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Method Compile</div>
+    <div id="Contents">
+
+    
+ Compiles the boolean variable declaration.
+ Registers the variable in the program if not already present and evaluates any initial expression.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public override void Compile()</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+<div id="SectionHeader1" class="SectionHeader">
+   <img id="SectionExpanderImg1" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand"> 
+   <span class="SectionHeader">
+       <span class="ArrowCursor">
+       Exceptions
+       </span>
+   </span>
+</div>
+<div id="SectionContainerDiv1" class="SectionContainer">
+<table class="MembersTable">
+<colgroup><col width="25%">
+<col width="75%">
+</colgroup><tbody><tr>
+<th>Exception</th>
+<th>Condition</th></tr>
+<tr>
+<td><span class="PseudoLink">Exception</span></td>
+<td>Thrown when variable name is invalid or program context is missing.</td>
+</tr>
+</tbody></table>
+</div>
+
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Method Execute</div>
+    <div id="Contents">
+
+    
+ Executes the boolean variable assignment/evaluation at runtime.
+ Re-evaluates the expression if present and updates the value.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public override void Execute()</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Method EvaluateAndStore</div>
+    <div id="Contents">
+
+    
+ Evaluates the initialization/assignment expression and stores the resulting boolean value.
+ Supports literals, variable references, and simple logical expressions.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    private void EvaluateAndStore()</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<p></p><hr><p></p><div id="Header">
+    <div id="ProjectTitle">Documentation Preview</div>
+    <div id="PageTitle">Method CheckParameters</div>
+    <div id="Contents">
+
+    
+ No additional parameter checking is required beyond base implementation.
+ 
+        <div id="SectionHeader0" class="SectionHeader">
+        <img id="SectionExpanderImg0" src="./boolean_files/BigSquareExpanded.gif" alt="Collapse/Expand">
+        <span class="SectionHeader">
+            <span class="ArrowCursor">
+            Syntax
+            </span>
+        </span>
+    </div>
+
+    <div id="SectionContainerDiv0" class="SectionContainer">
+    <table class="CodeTable">
+    <colgroup><col width="100%"></colgroup>
+    <tbody><tr class="CodeTable"><th class="CodeTable">C#</th></tr><tr class="CodeTable"><td class="CodeTable"><pre style="margin-left: 2px;">    public override void CheckParameters(string[] parameter)</pre></td></tr></tbody></table>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+<p></p>
+
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></body></html>
